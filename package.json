@@ -1,0 +1,25 @@
+{
+  "name": "DOM-I",
+  "version": "1.0.0",
+  "description": "## Project Description You are going to be emulating a content managment system by controlling the content in the JavaScript file instead of the HTML file. This project is an excercise pointed at selecting elements and then updating them without touching the HTML file using the DOM.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattshardman/DOM-I.git"
+  },
+  "keywords": [],
+  "author": "Matt Hardman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattshardman/DOM-I/issues"
+  },
+  "homepage": "https://github.com/mattshardman/DOM-I#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0"
+  }
+}
