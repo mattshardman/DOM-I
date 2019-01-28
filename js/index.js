@@ -91,3 +91,14 @@ const paras = document.querySelectorAll('p');
 const middleImg = document.getElementById('middle-img');
 middleImg.setAttribute('src', mainContent['middle-img-src']);
 
+//contact section
+const contactSection = document.querySelector('.contact');
+const contactContent = Object.values(siteContent.contact);
+
+[...contactSection.children].map((each, index) => {
+  each.textContent = contactContent[index];
+});
+
+// update footer section
+const footerSection = document.querySelector('footer');
+footerSection.children[0].textContent = footer.copyright;
