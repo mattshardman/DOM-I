@@ -87,3 +87,7 @@ const paras = document.querySelectorAll('p');
   para.textContent = parasContent[index];
 });
 
+// update main content image
+const middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', mainContent['middle-img-src']);
+
