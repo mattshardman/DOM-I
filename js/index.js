@@ -41,7 +41,14 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-
+// update nav text and class names
+const nav = document.querySelectorAll('a');
+const navClasses = Object.keys(siteContent.nav);
+const navText = Object.values(siteContent.nav);
+navElements.forEach((each, index) => { 
+  each.className = navClasses[index],
+  each.textContent = navText[index] 
+});
 
 
 
