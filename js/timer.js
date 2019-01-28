@@ -14,9 +14,9 @@
 
   screen.textContent = msToTime(0);
 
-  function disableButton(btn, disable) {
-    btn.disable = disable;
-    btn.style.background = disable ? '#ddd' : '#000';
+  function disableButton(btn, disable, color) {
+    btn.setAttribute('disable', disable);
+    btn.style.background = disable ? '#ddd' : color;
   }
 
   // start timer
@@ -29,15 +29,15 @@
       screen.textContent = msToTime(newTime);
       return setTimeout(() => startTimer(newTime, endTime), 10);
     }
-    screen.style.color = 'red';
-    disableButton(startButton, false);
+    screen.style.color = '#ea552c';
+    disableButton(startButton, false, '#ea552c');
     return null;
   }
 
   // reset timer
   function reset() {
     state.reset = true;
-    disableButton(startButton, false);
+    disableButton(startButton, false, '#3bdd8f');
     disableButton(resetButton, true);
     screen.textContent = msToTime(0);
     screen.style.color = '#000';
@@ -49,7 +49,7 @@
     state.reset = false;
     state.time = timeValue;
     disableButton(startButton, true);
-    disableButton(resetButton, false);
+    disableButton(resetButton, false, '#ea552c');
     startTimer(0, state.time || 10);
   }
 
