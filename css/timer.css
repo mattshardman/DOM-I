@@ -69,10 +69,6 @@ h1 {
 
 #reset-button {
     border: #ea552c 1px solid;
-    background: #ea552c;
-}
-
-.button-disabled {
     background: #ddd;
 }
 
@@ -82,7 +78,7 @@ h1 {
 }
 
 #reset-button:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     border: 1px #ad3224 solid;
 }
 

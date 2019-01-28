@@ -16,6 +16,7 @@
 
   function disableButton(btn, disable, color) {
     btn.setAttribute('disable', disable);
+    btn.style.cursor = disable ? 'not-allowed' : 'pointer';
     btn.style.background = disable ? '#ddd' : color;
   }
 
