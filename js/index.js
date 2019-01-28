@@ -42,16 +42,17 @@ const { nav, cta, mainContent, contact, footer } = siteContent;
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-// update nav text and class names
+// UPDATE NAV TEXT AND CLASSNAMES
 const navElements = document.querySelectorAll('a');
 const navClasses = Object.keys(nav);
 const navText = Object.values(nav);
 [...navElements].map((each, index) => { 
-  each.className = navClasses[index],
-  each.textContent = navText[index] 
+  each.className = navClasses[index];
+  each.textContent = navText[index];
+  each.style.color = 'green';
 });
 
-// update call to action
+// UPDATE CALL TO ACTION
 const { h1, button } = siteContent.cta;
 const ctaSection = document.querySelector('.cta-text');
 const ctaHeader = ctaSection.querySelector('h1');
@@ -62,9 +63,11 @@ ctaHeader.textContent = h1;
 ctaButton.textContent = button;
 ctaImage.setAttribute('src', siteContent.cta['img-src']);
 
-//update main content section
+//UPDATE MAIN CONTENT SECTION
 
 //update text-content
+
+//filter main content for h4s and paras
 const mainContentArray = Object.values(mainContent)
   .filter((each, index) => index !== 4)
 
@@ -74,11 +77,12 @@ const parasContent = mainContentArray
 const h4Content = mainContentArray
   .filter((each, index) => index % 2 === 0);
 
-const textContent = document.querySelectorAll('.text-content');
+//select h4s and paras from DOM
+const mainContentSection = document.querySelector('.main-content');
+const h4s = mainContentSection.querySelectorAll('h4');
+const paras = mainContentSection.querySelectorAll('p');
 
-const h4s = document.querySelectorAll('h4');
-const paras = document.querySelectorAll('p');
-
+//set h4s and paras from JSON
 [...h4s].map((h4, index) => {
   h4.textContent = h4Content[index];
 });
@@ -91,7 +95,7 @@ const paras = document.querySelectorAll('p');
 const middleImg = document.getElementById('middle-img');
 middleImg.setAttribute('src', mainContent['middle-img-src']);
 
-//contact section
+// UPDATE CONTACT SECTION
 const contactSection = document.querySelector('.contact');
 const contactContent = Object.values(siteContent.contact);
 
@@ -99,6 +103,6 @@ const contactContent = Object.values(siteContent.contact);
   each.textContent = contactContent[index];
 });
 
-// update footer section
+// UPDATE FOOTER SECTION
 const footerSection = document.querySelector('footer');
 footerSection.children[0].textContent = footer.copyright;
