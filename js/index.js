@@ -42,7 +42,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // update nav text and class names
-const nav = document.querySelectorAll('a');
+const navElements = document.querySelectorAll('a');
 const navClasses = Object.keys(siteContent.nav);
 const navText = Object.values(siteContent.nav);
 navElements.forEach((each, index) => { 
@@ -50,5 +50,15 @@ navElements.forEach((each, index) => {
   each.textContent = navText[index] 
 });
 
+// update call to action
+const { h1, button } = siteContent.cta;
+const cta = document.querySelector('.cta-text');
+const ctaHeader = cta.querySelector('h1');
+const ctaButton = cta.querySelector('button');
+const ctaImage = document.getElementById('cta-img');
+
+ctaHeader.textContent = h1;
+ctaButton.textContent = button;
+ctaImage.setAttribute('src', siteContent.cta['img-src']);
 
 
